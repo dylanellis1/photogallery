@@ -49,6 +49,19 @@ header nav {
   gap: 2rem;
 }
 
+header nav ul {
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+header nav li {
+  display: inline;
+}
+
 header nav a {
   color: white;
   text-decoration: none;
