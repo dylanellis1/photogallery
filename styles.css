@@ -4,66 +4,80 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #cccccc;
+  color: #000;
   line-height: 1.6;
-  color: #222;
-  background-color: #f5f5f5;
-  padding: 0 1rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .header-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #120323;
+  padding-top: 1rem;
   text-align: center;
-  padding: 1.5rem 0;
-  background-color: #ffffff;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 5px solid #97bf04;
 }
 
 .header-container h1 {
+  color: #97bf04;
   font-size: 1.8rem;
   margin-top: 0.5rem;
-  color: #2e5e4e;
 }
 
-.header-container nav ul {
+nav {
+  width: 100%;
+  background-color: #d9043d;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+nav ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem;
 }
 
-.header-container nav a {
+nav li {
+  flex: 1 1 20%;
+}
+
+nav a {
+  display: inline-block;
+  width: 95%;
+  padding: 0.75rem 0;
+  color: #fff;
+  border: 2px solid #97bf04;
   text-decoration: none;
-  color: #2e5e4e;
   font-weight: 600;
-  transition: color 0.3s ease;
+  border-radius: 4px;
 }
 
-.header-container nav a:hover {
-  color: #1a3a2e;
+nav a:hover {
+  opacity: 0.8;
 }
 
 main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
 }
 
 main h2 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 2rem;
-  color: #2e5e4e;
 }
 
 #gallery-container {
@@ -73,22 +87,20 @@ main h2 {
 }
 
 figure {
-  background: #fff;
-  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   overflow: hidden;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-  max-width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
   transition: transform 0.3s ease;
+}
+
+figure img {
+  border-bottom: 10px solid #97bf04;
 }
 
 figure:hover {
   transform: scale(1.02);
-}
-
-figure img {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 figcaption {
@@ -96,27 +108,32 @@ figcaption {
 }
 
 figcaption h3 {
-  font-size: 1.2rem;
-  color: #2e5e4e;
-  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #000;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+figcaption h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 4px;
+  background-color: #97bf04;
 }
 
 figcaption p {
-  font-size: 0.95rem;
-  color: #444;
+  margin-top: 0.5rem;
 }
 
 footer {
+  background-color: #d9043d;
+  color: #fff;
   text-align: center;
-  padding: 1rem 0;
-  background-color: #ffffff;
-  border-top: 2px solid #ddd;
-  margin-top: 2rem;
-}
-
-footer small {
+  padding: 1rem;
   font-size: 0.85rem;
-  color: #555;
 }
 
 /* ---------- MOBILE ---------- */
@@ -125,39 +142,24 @@ footer small {
     grid-template-columns: 1fr;
   }
 
-  figure {
-    width: 100%;
+  nav ul {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .header-container {
-    padding: 1rem;
-  }
-
-  .header-container h1 {
-    font-size: 1.6rem;
-  }
-
-  main h2 {
-    font-size: 1.5rem;
+  nav a {
+    width: 95%;
   }
 }
 
-/* ---------- TABLET (768px to 999px) ---------- */
+/* ---------- TABLET ---------- */
 @media (min-width: 768px) and (max-width: 999px) {
   #gallery-container {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  figure {
-    width: 100%;
-  }
-
-  .header-container {
-    flex-direction: column;
-  }
-
-  .header-container h1 {
-    font-size: 2rem;
+  #gallery-container figure:last-child {
+    grid-column: span 2;
   }
 }
 
@@ -166,23 +168,19 @@ footer small {
   .header-container {
     flex-direction: row;
     justify-content: space-between;
-    text-align: left;
-    padding: 1.5rem 3rem;
+    align-items: center;
+    padding: 1rem 2rem;
   }
 
-  .header-container h1 {
-    font-size: 2.2rem;
-  }
-
-  nav ul {
-    gap: 2rem;
+  nav {
+    width: 100%;
   }
 
   #gallery-container {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  figure {
-    width: 100%;
+  #gallery-container figure:last-child {
+    grid-column: span 2;
   }
 }
