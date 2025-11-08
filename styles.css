@@ -65,3 +65,43 @@ main h2 {
   margin-bottom: 2rem;
   color: #2e5e4e;
 }
+
+#gallery-container {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+figure {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+figure:hover {
+  transform: scale(1.02);
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+figcaption {
+  padding: 1rem;
+}
+
+figcaption h3 {
+  font-size: 1.2rem;
+  color: #2e5e4e;
+  margin-bottom: 0.5rem;
+}
+
+figcaption p {
+  font-size: 0.95rem;
+  color: #444;
+}
