@@ -105,3 +105,40 @@ figcaption p {
   font-size: 0.95rem;
   color: #444;
 }
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #ffffff;
+  border-top: 2px solid #ddd;
+  margin-top: 2rem;
+}
+
+footer small {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 767px) {
+  #gallery-container {
+    grid-template-columns: 1fr;
+  }
+
+  figure {
+    width: 100%;
+  }
+
+  .header-container {
+    padding: 1rem;
+  }
+
+  .header-container h1 {
+    font-size: 1.6rem;
+  }
+
+  main h2 {
+    font-size: 1.5rem;
+  }
+}
